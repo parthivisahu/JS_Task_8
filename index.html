@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JS Task 8</title>
+    </head>
+    <style>
+        #train{
+            width: 400px;
+            margin: 10px;
+        }
+
+    </style>
+    <script>
+        var imgObj = null;
+        function init(){
+            imgObj = document.getElementById("train");
+            imgObj.style.position = "relative" ;
+            imgObj.style.left="0px";
+        }
+        function moveRight(){
+            imgObj.style.left = parseInt(imgObj.style.left) +10 +'px';
+            animate = setTimeout(moveRight,20);
+        }
+        function stop(){
+            clearTimeout(animate);
+            imgObj.style.left = animate.pause();
+        }
+        window.onload =init;
+    </script>
+    <body>
+        <form>
+            <img id="train" src="/images/train.gif" />
+            <p> Click the following buttons to create animations.</p>
+            <input type="button" value="Start" onclick="moveRight();" />
+            <input type="button" value="Stop" onclick="stop();" />
+            <input type="button" value="Reset" onclick="init();" />
+        </form>
+    </body>
+</html>
+
